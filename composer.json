@@ -1,0 +1,43 @@
+{
+    "name": "m2s/laravel-nuxt",
+    "description": "NuxtJS framework integration for Laravel",
+    "version": "1.0.0",
+    "type": "library",
+    "keywords": [
+      "laravel",
+      "nuxtjs",
+      "nuxt",
+      "spa",
+      "pwa",
+      "typescript"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Marcenich",
+            "email": "info@m-squared-solutions.it"
+        }
+    ],
+    "support": {
+      "email": "info@m-squared-solutions.it",
+      "issues": "https://github.com/m2sd/laravel-nuxt/issues",
+      "source": "https://github.com/m2sd/laravel-nuxt"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "laravel/framework": "^7.0"
+    },
+    "require-dev": {
+        "phpmd/phpmd": "^2.8",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpro/grumphp": "^0.18.0"
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "M2S\\LaravelNuxt\\LaravelNuxtServiceProvider"
+        ]
+      }
+    }
+}

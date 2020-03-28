@@ -1,0 +1,19 @@
+parameters:
+  git_dir: .
+  bin_dir: vendor/bin
+  hide_circumvention_tip: true
+  tasks:
+    phpmd:
+      exclude:
+        - node_modules
+        - vendor
+        - views
+      ruleset:
+        - phpmd.xml
+    phpcs:
+      standard:
+        - phpcs.xml
+      whitelist_patterns:
+        - /^src\//
+        - /^config\//
+        - /^routes\//
