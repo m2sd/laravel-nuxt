@@ -27,11 +27,12 @@ class LaravelNuxtServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/nuxt.php' => config_path('nuxt.php')
-        ]);
+        $this->publishes(
+            [__DIR__.'/../config/nuxt.php' => config_path('nuxt.php')],
+            'config'
+        );
 
-        $this->loadViewsFrom(__DIR__.'/../views', 'courier');
+        $this->loadViewsFrom(__DIR__.'/../views', 'nuxt');
 
         if ($this->app->runningInConsole()) {
             $this->commands([
