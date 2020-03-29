@@ -1,6 +1,6 @@
 {
   "name": "laravel-nuxt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NuxtJS framework integration for Laravel",
   "private": true,
   "scripts": {

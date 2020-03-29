@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/m2sd/laravel-nuxt/compare/v1.0.0...v1.0.1) (2020-03-29)
+
+
+### Bug Fixes
+
+* **config:** adjust config keys and values ([7353198](https://github.com/m2sd/laravel-nuxt/commit/7353198f76fbf6feef483d3cdf561f44f6c3d244))
+* **install:** update install command ([40b77fa](https://github.com/m2sd/laravel-nuxt/commit/40b77fa3bb2a3617e4c553a9119b2b1d2570c26c))
+* **provider:** adjust view prefix and publishable tag ([5c98d44](https://github.com/m2sd/laravel-nuxt/commit/5c98d443711f178406b7373da365bcd6389c8c9b))
+* **routes:** remove leading slash on default route ([aeaf655](https://github.com/m2sd/laravel-nuxt/commit/aeaf655769dc3bd0053703c54eed13d0d2cd2617))
+* **views:** improve config view to reduce eslint errors ([2ad1852](https://github.com/m2sd/laravel-nuxt/commit/2ad18520290c4f5f7babf08fba67be8d391721cc))
+* improve uri settings to allow leading/trailing slashes ([05e5e44](https://github.com/m2sd/laravel-nuxt/commit/05e5e442df3abdddea29b06b1aa96db94a6faf5f))
+
 ## 1.0.0 (2020-03-28)
 
 
