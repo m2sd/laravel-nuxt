@@ -42,7 +42,10 @@
         "laravel": {
             "providers": [
                 "M2S\\LaravelNuxt\\LaravelNuxtServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Nuxt": "M2S\\LaravelNuxt\\Facades\\Nuxt"
+            }
         }
     }
 }

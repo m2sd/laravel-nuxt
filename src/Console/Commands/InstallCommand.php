@@ -59,9 +59,9 @@ class InstallCommand extends Command
     public function handle()
     {
         $source = base_path($this->argument('source'));
-        $prefixConfig = trim(config('nuxt.prefix'), '/');
         $yarn = $this->option('yarn') ?: $this->confirm('Use yarn package manager?');
         $typescript = $this->option('typescript') ?: $this->confirm('Use typescript runtime?');
+        $prefixConfig = trim(config('nuxt.prefix'), '/');
         $prefix = trim($this->option('prefix') ?: $prefixConfig, '/');
 
         $this->installNuxtRemote($source, $yarn);

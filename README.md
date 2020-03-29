@@ -49,9 +49,9 @@ Options:
 
 By default the package automatically adds a route for nuxt pages.
 
-`config('nuxt.prefix').'/{path?}'`
+`Nuxt::route('/{path?}')->where('path', '.*')->name('nuxt');`
 
-This route is named `'nuxt'` and can be used to redirect to using Laravels route helper.
+This route is named `'nuxt'` and can be used with Laravels route helper.
 
 ```php
 route('nuxt');
@@ -65,12 +65,15 @@ You can disable/enable automatic routing with the `'routing'` setting in `config
 
 ## Manual Routing
 
-If you would like to manually define routes for nuxt you can use the included Controller.
+The package provides a simple facade which might be used to register nuxt routes.  
+Routes will automatically be prefixed with the configured path and a controller will be attached which handles internal redirection to nuxt.  
+The method returns a `Illuminate\Routing\Route` instance and may be used as normal.
+
+In `routes/web.php`:
 
 ```php
 
-use M2S\LaravelNuxt\Http\Controllers\NuxtController;
+use M2S\LaravelNuxt\Facades\Nuxt;
 
-// Be sure to use the defined 'prefix', as nuxt uses this internally for route resolution
-Route::get('app/example/route', NuxtController::class);
+Nuxt::route('example/route')->name('nuxt.example');
 ```

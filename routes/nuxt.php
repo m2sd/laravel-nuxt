@@ -1,11 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use M2S\LaravelNuxt\Http\Controllers\NuxtController;
+use M2S\LaravelNuxt\Facades\Nuxt;
 
-$prefix = rtrim(config('nuxt.prefix'), '/');
-
-Route::get(
-    "$prefix/{path?}",
-    NuxtController::class
-)->name('nuxt')->where('path', '.*');
+Nuxt::route('{path?}')->name('nuxt')->where('path', '.*');
