@@ -41,13 +41,14 @@ class InstallCommand extends Command
         $this->addOption('yarn', 'y', InputOption::VALUE_NONE, 'Use yarn package manager');
         $this->addOption('typescript', 't', InputOption::VALUE_NONE, 'Use typescript runtime');
         $this->addOption('cache', 'c', InputOption::VALUE_OPTIONAL, 'Optional caching endpoint (e.g. /api/cache)');
-        $this->addOption('no-export', null, InputOption::VALUE_NONE, 'Do not export env variable on build');
         $this->addOption(
             'prefix',
             'p',
             InputOption::VALUE_OPTIONAL,
             "Prefix for the nuxt application (will use value from `config('nuxt.prefix')` if omitted)"
         );
+
+        $this->addOption('no-export', null, InputOption::VALUE_NONE, 'Do not export env variable on build');
     }
 
     /**

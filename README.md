@@ -32,8 +32,8 @@ Arguments:
 Options:
   -y, --yarn             Use yarn package manager
   -t, --typescript       Use typescript runtime
-  -p, --prefix[=PREFIX]  Prefix for the nuxt application [default: "app"]
   -c, --cache[=CACHE]    Optional caching endpoint (e.g. /api/cache)
+  -p, --prefix[=PREFIX]  Prefix for the nuxt application (will use value from `config('nuxt.prefix')` if omitted)
       --no-export        Do not export env variable on build
   -h, --help             Display this help message
   -q, --quiet            Do not output any message
