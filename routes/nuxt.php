@@ -2,4 +2,4 @@
 
 use M2S\LaravelNuxt\Facades\Nuxt;
 
-Nuxt::route('{path?}')->name('nuxt')->where('path', '.*');
+Nuxt::route('{path?}')->middleware('web')->name('nuxt')->where('path', '.*');
