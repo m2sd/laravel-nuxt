@@ -14,7 +14,7 @@ config.modules = [...(config.modules || []), 'nuxt-laravel']
 config.laravel = {
 @if($cache)
   swCache: {
-    endpoint: '{{ $cache }}'
+    endpoint: '/{{ $cache }}'
   },
 @endif
   dotEnvExport: {{ $export ? 'true' : 'false'}}

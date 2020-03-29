@@ -61,7 +61,7 @@ class InstallCommand extends Command
         $prefixConfig = trim(config('nuxt.prefix'), '/');
         $yarn = $this->option('yarn') ?: $this->confirm('Use yarn package manager?');
         $typescript = $this->option('typescript') ?: $this->confirm('Use typescript runtime?');
-        $prefix = trim($this->option('prefix'), '/') ?: $prefixConfig;
+        $prefix = trim($this->option('prefix') ?: $prefixConfig, '/');
 
         $this->installNuxtRemote($source, $yarn);
         $this->installNuxtLocal($source, $prefix, $yarn, $typescript);
@@ -122,7 +122,7 @@ Please make sure to publish configuration and to adjust the 'prefix' setting acc
                 'source'     => $source,
                 'prefix'     => $prefix,
                 'typescript' => $typescript,
-                'cache'      => rtrim($this->option('cache'), '/'),
+                'cache'      => trim($this->option('cache'), '/'),
                 'export'     => !$this->option('no-export'),
             ]
         )->render();
