@@ -1,6 +1,6 @@
 {
-    extend: '{{ $source }}',
-    compilerOptions: {
-        baseUrl: '{{ $source }}'
+    "extend": "{{ $source }}/tsconfig.json",
+    "compilerOptions": {
+        "baseUrl": "{{ $source }}"
     }
 }
