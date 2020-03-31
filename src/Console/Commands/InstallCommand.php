@@ -129,6 +129,26 @@ Please make sure to publish configuration and to adjust the 'prefix' setting acc
         )->render();
 
         file_put_contents($configFile, $config);
+
+        if ($typescript) {
+            $tsconfigFile = base_path('tsconfig.json');
+
+            if (file_exists($tsconfigFile)) {
+                $this->output->warning("'tsconfig.json' file exists writing to 'tsconfig.nuxt.json'
+Please compare the files and configure typescript appropriately.");
+
+                $tsconfigFile = base_path('tsconfig.nuxt.json');
+            }
+
+            $tsconfig = view(
+                'nuxt::tsconfig',
+                [
+                    'source' => $source
+                ]
+            )->render();
+
+            file_put_contents($tsconfigFile, $tsconfig);
+        }
     }
 
     protected function updatePackageJson(bool $typescript)
