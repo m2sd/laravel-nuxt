@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/m2sd/laravel-nuxt/compare/v1.1.2...v1.1.3) (2020-03-31)
+
+
+### Bug Fixes
+
+* **typescript:** use json format for tsconfig ([189f4e0](https://github.com/m2sd/laravel-nuxt/commit/189f4e02067c900ce7d86328d0228a62e918a563))
+
 ### [1.1.2](https://github.com/m2sd/laravel-nuxt/compare/v1.1.1...v1.1.2) (2020-03-31)
 
 
