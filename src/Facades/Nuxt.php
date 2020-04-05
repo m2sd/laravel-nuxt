@@ -11,7 +11,7 @@ class Nuxt
     {
         return Route::get(
             '/'.trim(config('nuxt.prefix'), '/').'/'.trim($path, '/'),
-            NuxtController::class
+            '\\'.NuxtController::class
         );
     }
 }
