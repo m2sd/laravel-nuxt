@@ -3946,5 +3946,6 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "1.1.0",
+    "version": "1.1.5"
 }
