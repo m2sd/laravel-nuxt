@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/m2sd/laravel-nuxt/compare/v1.1.3...v1.1.4) (2020-04-05)
+
+
+### Bug Fixes
+
+* **facade:** avoid namespace prefix by adding a root backslash ([401d474](https://github.com/m2sd/laravel-nuxt/commit/401d47490014ab00f1885b9ae8abfb17075d7de8))
+
 ### [1.1.3](https://github.com/m2sd/laravel-nuxt/compare/v1.1.2...v1.1.3) (2020-03-31)
 
 
