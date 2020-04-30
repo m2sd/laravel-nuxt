@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.6](https://github.com/m2sd/laravel-nuxt/compare/v1.1.5...v1.1.6) (2020-04-30)
+
+
+### Bug Fixes
+
+* **command:** update nuxt-laravel dependency and make package scripts unique ([d54e40e](https://github.com/m2sd/laravel-nuxt/commit/d54e40ee4551a8b007be2c5e9c8cf8b47074b693))
+
 ### [1.1.5](https://github.com/m2sd/laravel-nuxt/compare/v1.1.4...v1.1.5) (2020-04-05)
 
 ### [1.1.4](https://github.com/m2sd/laravel-nuxt/compare/v1.1.3...v1.1.4) (2020-04-05)
