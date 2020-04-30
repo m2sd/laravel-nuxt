@@ -3,6 +3,7 @@
 namespace M2S\LaravelNuxt\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -98,7 +99,7 @@ Please make sure to publish configuration and to adjust the 'prefix' setting acc
                     : 'npm i -D --prefix'
             ).
             " $source ".
-            'nuxt-laravel@next @nuxtjs/axios'.
+            'nuxt-laravel @nuxtjs/axios'.
             ($this->option('cache') ? ' @nuxtjs/pwa' : '')
         );
     }
@@ -143,7 +144,7 @@ Please compare the files and configure typescript appropriately.");
             $tsconfig = view(
                 'nuxt::tsconfig',
                 [
-                    'source' => $source
+                    'source' => $source,
                 ]
             )->render();
 
@@ -158,12 +159,25 @@ Please compare the files and configure typescript appropriately.");
         $package = json_decode(file_get_contents($packageFile), true);
         $nuxt = $typescript ? 'nuxt-ts' : 'nuxt';
 
+        $scripts = [
+            'dev'      => $nuxt,
+            'build'    => $nuxt.' build',
+            'generate' => $nuxt.' generate',
+            'start'    => $nuxt.' start',
+        ];
+
         if (!isset($package['scripts'])) {
             $package['scripts'] = [];
         }
-        $package['scripts']['nuxt:dev'] = $nuxt;
-        $package['scripts']['nuxt:build'] = $nuxt.' generate';
-        $package['scripts']['nuxt:start'] = $nuxt.' start';
+
+        foreach ($scripts as $key => $script) {
+            $unique = $key;
+            while (isset($package['scripts']['nuxt:'.$unique])) {
+                $unique .= $key.'_'.Str::random(4);
+            }
+
+            $package['scripts']['nuxt:'.$unique] = $script;
+        }
 
         file_put_contents($packageFile, json_encode($package, JSON_PRETTY_PRINT));
     }

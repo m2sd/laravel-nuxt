@@ -8,7 +8,7 @@
     <rule ref="rulesets/cleancode.xml/ElseExpression" />
     <rule ref="rulesets/cleancode.xml/StaticAccess">
         <properties>
-            <property name="exceptions" value="\Illuminate\Support\Facades\Route" />
+            <property name="exceptions" value="\Illuminate\Support\Str,\Illuminate\Support\Facades\Route" />
         </properties>
     </rule>
     <rule ref="rulesets/codesize.xml" />
