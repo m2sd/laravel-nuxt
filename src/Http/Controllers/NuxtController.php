@@ -17,16 +17,21 @@ class NuxtController
             abort(404);
         }
 
-        return $this->renderNuxtPage();
+        return response($this->renderNuxtPage($request))->header('X-Laravel-Nuxt-Proxy', config('app.url'));
     }
 
     /**
      * Render the Nuxt page.
      */
-    protected function renderNuxtPage(): string
+    protected function renderNuxtPage(Request $request): string
     {
-        // In production, this will display the precompiled nuxt page.
-        // In development, this will fetch and display the page from the nuxt's dev server.
+        // If SSR is set to true try to request the full path
+        if (config('nuxt.ssr')) {
+            return file_get_contents(config('nuxt.ssr').$request->path());
+        }
+
+        // In production, this will display the pre-compiled nuxt page.
+        // In development, this will fetch and display the page from the nuxt dev server.
         return file_get_contents(config('nuxt.source'));
     }
 }
