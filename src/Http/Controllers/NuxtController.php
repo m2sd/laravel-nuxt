@@ -3,13 +3,15 @@
 namespace M2S\LaravelNuxt\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use M2S\LaravelNuxt\Exceptions\InvalidConfigurationException;
 
 class NuxtController
 {
     /**
      * Handle the SPA request.
      */
-    public function __invoke(Request $request): string
+    public function __invoke(Request $request): Response
     {
         // If the request expects JSON, it means that
         // someone sent a request to an invalid route.
@@ -25,13 +27,23 @@ class NuxtController
      */
     protected function renderNuxtPage(Request $request): string
     {
-        // If SSR is set to true try to request the full path
-        if (config('nuxt.ssr')) {
-            return file_get_contents(config('nuxt.ssr').$request->path());
+        $source = config('nuxt.source', public_path('spa.html'));
+
+        // If SSR is set to true try to request the path from source URL
+        if (config('nuxt.ssr', false) && $this->checkSsrSource($source)) {
+            return file_get_contents(rtrim($source, '/').$request->getRequestUri());
         }
 
-        // In production, this will display the pre-compiled nuxt page.
-        // In development, this will fetch and display the page from the nuxt dev server.
+        // Return static path resource (URL or file path)
         return file_get_contents(config('nuxt.source'));
+    }
+
+    protected function checkSsrSource(string $source): bool
+    {
+        if (!filter_var($source, FILTER_VALIDATE_URL)) {
+            throw new InvalidConfigurationException(sprintf('Found invalid source for ssr mode: %s', $source));
+        }
+
+        return true;
     }
 }
