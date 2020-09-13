@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/m2sd/laravel-nuxt/compare/v1.1.6...v1.2.0) (2020-09-13)
+
+
+### Features
+
+* **routing:** implement ssr source checks ([5320398](https://github.com/m2sd/laravel-nuxt/commit/5320398b43edac36fb7684fe3cc879d1c976ff2e))
+* **ssr:** implement ssr proxy ([8c730e1](https://github.com/m2sd/laravel-nuxt/commit/8c730e182239f22a528db1698d1c703fb4d8fcf5))
+
 ### [1.1.6](https://github.com/m2sd/laravel-nuxt/compare/v1.1.5...v1.1.6) (2020-04-30)
 
 
