@@ -41,15 +41,15 @@
         "lint:staged": "grumphp run --ansi"
     },
     "require": {
-        "laravel/framework": "^7.0",
-        "friendsofphp/php-cs-fixer": "^2.16",
-        "pedrotroller/php-cs-custom-fixer": "^2.21"
+        "laravel/framework": "^8.0",
+        "illuminate/support": "^8.0"
     },
     "require-dev": {
         "phpmd/phpmd": "^2.8",
         "squizlabs/php_codesniffer": "^3.5",
         "phpro/grumphp": "^0.18.0",
-        "illuminate/support": "^7.0"
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "pedrotroller/php-cs-custom-fixer": "^2.23"
     },
     "autoload": {
         "psr-4": {
